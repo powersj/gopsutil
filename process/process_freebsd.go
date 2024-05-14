@@ -6,6 +6,7 @@ package process
 import (
 	"bytes"
 	"context"
+	"fmt"
 	"path/filepath"
 	"strconv"
 	"strings"
@@ -118,6 +119,7 @@ func (p *Process) createTimeWithContext(ctx context.Context) (int64, error) {
 	if err != nil {
 		return 0, err
 	}
+	fmt.Printf("k: %#v\n", k)
 	return int64(k.Start.Sec)*1000 + int64(k.Start.Usec)/1000, nil
 }
 

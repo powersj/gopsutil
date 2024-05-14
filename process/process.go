@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"runtime"
 	"sort"
 	"sync"
@@ -200,6 +201,7 @@ func Processes() ([]*Process, error) {
 // to get more information about the process. An error will be returned
 // if the process does not exist.
 func NewProcess(pid int32) (*Process, error) {
+	fmt.Println("getting process with pid: ", pid)
 	return NewProcessWithContext(context.Background(), pid)
 }
 
